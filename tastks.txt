@@ -1,0 +1,13 @@
+scaffold a product - done
+scaffold a recipe - done 
+make db connection - done 
+add source safety
+add some test recipes and products
+make good view for recipes
+make good interface for adding products
+make good interface for adding recipes
+make good link for adding products while adding recipe
+add capcha for recipe adding
+make good session saving, so refresh does not delete info on page
+
+
