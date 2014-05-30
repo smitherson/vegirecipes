@@ -1,0 +1,50 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+AddProperPictures	db/migrate/20140429215727_add_proper_pictures.rb	/^class AddProperPictures < ActiveRecord::Migration$/;"	c
+Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:VegirecipesZero
+ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
+ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
+CreateProducts	db/migrate/20140424080938_create_products.rb	/^class CreateProducts < ActiveRecord::Migration$/;"	c
+CreateProductsForRecipe	db/migrate/20140515130707_create_products_for_recipe.rb	/^class CreateProductsForRecipe < ActiveRecord::Migration$/;"	c
+CreateRecipes	db/migrate/20140424081331_create_recipes.rb	/^class CreateRecipes < ActiveRecord::Migration$/;"	c
+Product	app/models/product.rb	/^class Product < ActiveRecord::Base$/;"	c
+ProductTest	test/models/product_test.rb	/^class ProductTest < ActiveSupport::TestCase$/;"	c
+ProductsController	app/controllers/products_controller.rb	/^class ProductsController < ApplicationController$/;"	c
+ProductsControllerTest	test/controllers/products_controller_test.rb	/^class ProductsControllerTest < ActionController::TestCase$/;"	c
+ProductsHelper	app/helpers/products_helper.rb	/^module ProductsHelper$/;"	m
+ProductsHelperTest	test/helpers/products_helper_test.rb	/^class ProductsHelperTest < ActionView::TestCase$/;"	c
+Recipe	app/models/recipe.rb	/^class Recipe < ActiveRecord::Base$/;"	c
+RecipeTest	test/models/recipe_test.rb	/^class RecipeTest < ActiveSupport::TestCase$/;"	c
+RecipesController	app/controllers/recipes_controller.rb	/^class RecipesController < ApplicationController$/;"	c
+RecipesControllerTest	test/controllers/recipes_controller_test.rb	/^class RecipesControllerTest < ActionController::TestCase$/;"	c
+RecipesHelper	app/helpers/recipes_helper.rb	/^module RecipesHelper$/;"	m
+RecipesHelperTest	test/helpers/recipes_helper_test.rb	/^class RecipesHelperTest < ActionView::TestCase$/;"	c
+VegirecipesZero	config/application.rb	/^module VegirecipesZero$/;"	m
+change	db/migrate/20140424080938_create_products.rb	/^  def change$/;"	f	class:CreateProducts
+change	db/migrate/20140424081331_create_recipes.rb	/^  def change$/;"	f	class:CreateRecipes
+change	db/migrate/20140515130707_create_products_for_recipe.rb	/^  def change$/;"	f	class:CreateProductsForRecipe
+create	app/controllers/products_controller.rb	/^  def create$/;"	f	class:ProductsController
+create	app/controllers/recipes_controller.rb	/^  def create$/;"	f	class:RecipesController
+destroy	app/controllers/products_controller.rb	/^  def destroy$/;"	f	class:ProductsController
+destroy	app/controllers/recipes_controller.rb	/^  def destroy$/;"	f	class:RecipesController
+down	db/migrate/20140429215727_add_proper_pictures.rb	/^  def down$/;"	f	class:AddProperPictures
+edit	app/controllers/products_controller.rb	/^  def edit$/;"	f	class:ProductsController
+edit	app/controllers/recipes_controller.rb	/^  def edit$/;"	f	class:RecipesController
+index	app/controllers/products_controller.rb	/^  def index$/;"	f	class:ProductsController
+index	app/controllers/recipes_controller.rb	/^  def index$/;"	f	class:RecipesController
+new	app/controllers/products_controller.rb	/^  def new$/;"	f	class:ProductsController
+new	app/controllers/recipes_controller.rb	/^  def new$/;"	f	class:RecipesController
+product_params	app/controllers/products_controller.rb	/^    def product_params$/;"	f	class:ProductsController
+recipe_params	app/controllers/recipes_controller.rb	/^    def recipe_params$/;"	f	class:RecipesController
+set_product	app/controllers/products_controller.rb	/^    def set_product$/;"	f	class:ProductsController
+set_recipe	app/controllers/recipes_controller.rb	/^    def set_recipe$/;"	f	class:RecipesController
+show	app/controllers/products_controller.rb	/^  def show$/;"	f	class:ProductsController
+show	app/controllers/recipes_controller.rb	/^  def show$/;"	f	class:RecipesController
+up	db/migrate/20140429215727_add_proper_pictures.rb	/^  def up$/;"	f	class:AddProperPictures
+update	app/controllers/products_controller.rb	/^  def update$/;"	f	class:ProductsController
+update	app/controllers/recipes_controller.rb	/^  def update$/;"	f	class:RecipesController

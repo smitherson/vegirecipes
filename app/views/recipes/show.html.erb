@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
 
+
+
 <p>
-  <strong>Product:</strong>
-  <%= @recipe.product %>
+  <strong>Name:</strong>
+  <%= @recipe.name %>
 </p>
 
 <p>
@@ -11,8 +13,23 @@
 </p>
 
 <p>
-  <strong>Picture:</strong>
-  <%= @recipe.picture %>
+  <strong>Image file name:</strong>
+  <%= @recipe.image_file_name %>
+</p>
+
+<p>
+  <strong>Image content type:</strong>
+  <%= @recipe.image_content_type %>
+</p>
+
+<p>
+  <strong>Image file size:</strong>
+  <%= @recipe.image_file_size %>
+</p>
+
+<p>
+  <strong>Image updated at:</strong>
+  <%= @recipe.image_updated_at %>
 </p>
 
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |

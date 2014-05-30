@@ -6,11 +6,6 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= @product.image %>
-</p>
-
-<p>
   <strong>Protein:</strong>
   <%= @product.protein %>
 </p>
@@ -28,6 +23,26 @@
 <p>
   <strong>Calories:</strong>
   <%= @product.calories %>
+</p>
+
+<p>
+  <strong>Image file name:</strong>
+  <%= @product.image_file_name %>
+</p>
+
+<p>
+  <strong>Image content type:</strong>
+  <%= @product.image_content_type %>
+</p>
+
+<p>
+  <strong>Image file size:</strong>
+  <%= @product.image_file_size %>
+</p>
+
+<p>
+  <strong>Image updated at:</strong>
+  <%= @product.image_updated_at %>
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

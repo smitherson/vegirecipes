@@ -3,9 +3,11 @@
 <table>
   <thead>
     <tr>
-      <th>Product</th>
       <th>Instructions</th>
-      <th>Picture</th>
+      <th>Image file name</th>
+      <th>Image content type</th>
+      <th>Image file size</th>
+      <th>Image updated at</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,9 +17,11 @@
   <tbody>
     <% @recipes.each do |recipe| %>
       <tr>
-        <td><%= recipe.product %></td>
         <td><%= recipe.instructions %></td>
-        <td><%= recipe.picture %></td>
+        <td><%= recipe.image_file_name %></td>
+        <td><%= image_tag recipe.image.url(:thumb) %></td>
+        <td><%= recipe.image_file_size %></td>
+        <td><%= recipe.image_updated_at %></td>
         <td><%= link_to 'Show', recipe %></td>
         <td><%= link_to 'Edit', edit_recipe_path(recipe) %></td>
         <td><%= link_to 'Destroy', recipe, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -11,24 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140424081331) do
+ActiveRecord::Schema.define(version: 20140525203344) do
 
   create_table "products", force: true do |t|
-    t.string   "name",                                null: false
-    t.string   "image",                               null: false
-    t.decimal  "protein",    precision: 10, scale: 0, null: false
-    t.decimal  "fat",        precision: 10, scale: 0, null: false
-    t.decimal  "fiber",      precision: 10, scale: 0, null: false
-    t.decimal  "calories",   precision: 10, scale: 0, null: false
+    t.string   "name",                                        null: false
+    t.decimal  "protein",            precision: 10, scale: 0, null: false
+    t.decimal  "fat",                precision: 10, scale: 0, null: false
+    t.decimal  "fiber",              precision: 10, scale: 0, null: false
+    t.decimal  "calories",           precision: 10, scale: 0, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "products_for_recipes", force: true do |t|
+    t.integer  "recipe_id"
+    t.integer  "product_id"
+    t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "recipes", force: true do |t|
-    t.text     "instructions", null: false
-    t.string   "picture",      null: false
+    t.text     "instructions",       null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "name"
   end
 
 end

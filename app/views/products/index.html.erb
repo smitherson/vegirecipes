@@ -4,11 +4,14 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Image</th>
       <th>Protein</th>
       <th>Fat</th>
       <th>Fiber</th>
       <th>Calories</th>
+      <th>Image file name</th>
+      <th>Image content type</th>
+      <th>Image file size</th>
+      <th>Image updated at</th>
       <th></th>
       <th></th>
       <th></th>
@@ -19,11 +22,14 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.name %></td>
-        <td><%= product.image %></td>
         <td><%= product.protein %></td>
         <td><%= product.fat %></td>
         <td><%= product.fiber %></td>
         <td><%= product.calories %></td>
+        <td><%= image_tag product.image.url(:thumb) %></td>
+        <td><%= product.image_content_type %></td>
+        <td><%= product.image_file_size %></td>
+        <td><%= product.image_updated_at %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>

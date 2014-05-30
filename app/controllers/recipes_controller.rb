@@ -15,10 +15,16 @@ class RecipesController < ApplicationController
   # GET /recipes/new
   def new
     @recipe = Recipe.new
+	
+	@products = Product.select(:name, :id).where(1==1)
+	@recipe.products = Array.new(1, Product.new)
+	@recipe.products_for_recipe = Array.new(1, ProductsForRecipe.new)
   end
 
   # GET /recipes/1/edit
   def edit
+	@products = @recipe.products.all 
+	@products_for_recipe = ProductsForRecipe.where(:recipe_id => @recipe.id)
   end
 
   # POST /recipes
@@ -28,6 +34,15 @@ class RecipesController < ApplicationController
 
     respond_to do |format|
       if @recipe.save
+
+		@products_for_recipe = {}
+    
+        params[:recipe][:products_attributes].each do |key, value|
+          new_product_for_recipe = ProductsForRecipe.new(:quantity => value['products_for_recipe']['quantity'], 
+                                                         :product_id => value['products_for_recipe']['product_id'])
+	      new_product_for_recipe.recipe_id = @recipe.id
+          new_product_for_recipe.save
+        end
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
         format.json { render action: 'show', status: :created, location: @recipe }
       else
@@ -69,6 +84,6 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:product, :instructions, :picture)
+      params.require(:recipe).permit(:name, :instructions, :image_file_name, :image_content_type, :image_file_size, :image_updated_at, :image)
     end
 end

@@ -1,13 +1,23 @@
-scaffold a product - done
-scaffold a recipe - done 
-make db connection - done 
-add source safety
-add some test recipes and products
-make good view for recipes
-make good interface for adding products
-make good interface for adding recipes
-make good link for adding products while adding recipe
-add capcha for recipe adding
-make good session saving, so refresh does not delete info on page
+time = 4h
+done	scaffold a product 
+done 	scaffold a recipe 
+done	make db connection  
+done	add source safety 
+done	make image upload for recipes and products 
+done	make recipe form have products
+done		make form with rails helpers 
+done		make autocomplete for list 
+done		make dynamic adding and removing of fields in form with autocomplete 
+done		make database fixes for the quantity field, add name field to recipe 
+done		make reader for the form  
+		make validations for the form
+	
+done	add some test recipes and products
+	make good view, edit and index for recipes
+	make good interface for adding products
+	make good interface for adding recipes
+	make good link for adding products while adding recipe
+	add capcha for recipe adding
+	make good session saving, so refresh does not delete info on page
 
 
