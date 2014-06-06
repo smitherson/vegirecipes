@@ -1,10 +1,6 @@
-
-<input onclick="addProductRow();" type="button" value="Add product" />
-
-<div id="product_list">
+<div id="product_list" class="span24">
+  <input onclick="addProductRow(' ',' ',' ');" type="button" value="Add product" />
 </div>
-
-
 
 <script>
 
@@ -15,9 +11,6 @@ var availableTags = [
 var products_id_map = {
 <%=raw @products.map { |product| "\"#{product.name}\": \"#{product.id}\"" }.join(', ') %>
 };
-
-
-
 function filter_function (request, response) {
    response( $.ui.autocomplete.filter( availableTags, request.term ) ); 
 }
@@ -29,38 +22,26 @@ $( ".auto" ).autocomplete(
 "option", { messages: false });
 }
 
-
 function validate_product(product_num) {
 var product_name = jQuery("#recipe_products_attributes_" + product_num + "_name").val();
 jQuery("#recipe_products_attributes_"+ product_num +"_products_for_recipe_product_id").val(products_id_map[product_name]);
 }
 
 var product_num = 0;
-function addProductRow() {
+function addProductRow(product_name, quantity ,product_id) {
 product_num ++;
+
 var row = '<div id="product_'+product_num+'"> ' + 
- '<%= f.fields_for :products do |ff| %> ' +
- '<%= ff.label :product %> <br> ' +	
- '<%=raw ff.text_field :name, :class => "auto", :onchange => "validate_product(product_num);" %> '+ 
-	'<%= ff.fields_for :products_for_recipe do |fff| %>' +
-    '<%= fff.date_field :quantity %>' +
-    '<%= fff.text_field :product_id %>' +
-    '<% end %>'+
- '<% end %> ' + 
+ ' ' +
+ '<label for="recipe_products_attributes_'+ product_num +'_product">Product</label> <br> ' +	
+ '<input class="auto" id="recipe_products_attributes_'+ product_num +'_name" name="recipe[products_attributes]['+ product_num +'][name]" onchange="validate_product('+ product_num +');" type="text" value="'+ product_name +'" /> '+ 
+	'' +
+    '<input id="recipe_products_attributes_' + product_num + '_products_for_recipe_quantity" name="recipe[products_attributes][' +product_num + '][products_for_recipe][quantity]" type="date" value="'+ quantity +'"  />' +
+    '<input id="recipe_products_attributes_' + product_num + '_products_for_recipe_product_id" name="recipe[products_attributes][' + product_num + '][products_for_recipe][product_id]" type="text" value="'+ product_id +'" />' +
+    ''+
+ ' ' + 
  '<input type="button" value="Delete" onclick="removeProductRow(' + product_num + ');"></input> ' +
 ' </div>';
-
-row = row.replace("recipe_products_attributes_0_products_for_recipe_quantity", 
-			"recipe_products_attributes_"+product_num+"_products_for_recipe_quantity");
-row = row.replace("recipe[products_attributes][0][products_for_recipe][quantity]",
-			 "recipe[products_attributes]["+ product_num +"][products_for_recipe][quantity]");
-
-row = row.replace("recipe_products_attributes_0_product", "recipe_products_attributes_"+ product_num +"_product");
-row = row.replace("recipe_products_attributes_0_name","recipe_products_attributes_" + product_num + "_name");
-row = row.replace("recipe[products_attributes][0][name]","recipe[products_attributes]["+ product_num +"][name]");
-row = row.replace("product_num",product_num);
-row = row.replace("recipe_products_attributes_0_products_for_recipe_product_id","recipe_products_attributes_"+ product_num +"_products_for_recipe_product_id");
-row = row.replace("recipe[products_attributes][0][products_for_recipe][product_id]","recipe[products_attributes]["+ product_num +"][products_for_recipe][product_id]");
 
 jQuery('#product_list').append(row);
 autocomplete_init();
@@ -69,6 +50,12 @@ autocomplete_init();
 function removeProductRow(product_num) {
 jQuery("#product_"+ product_num).remove();
 }
+
+<% if @products_for_recipe  %>
+  <%  @products_for_recipe.each  do |rp| %>
+  <%=raw "addProductRow('#{rp.product.name}','#{rp.quantity}','#{rp.product_id}');" %>
+  <% end %>
+<% end %>
 </script>
 
 

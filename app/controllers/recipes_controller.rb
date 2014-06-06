@@ -1,10 +1,12 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
+
   # GET /recipes
   # GET /recipes.json
   def index
-    @recipes = Recipe.all
+	@recipes = Recipe.search(params[:search])
+#    @recipes = Recipe.all
   end
 
   # GET /recipes/1
@@ -23,7 +25,7 @@ class RecipesController < ApplicationController
 
   # GET /recipes/1/edit
   def edit
-	@products = @recipe.products.all 
+	@products = Product.select(:name, :id).where(1==1)
 	@products_for_recipe = ProductsForRecipe.where(:recipe_id => @recipe.id)
   end
 
@@ -57,6 +59,15 @@ class RecipesController < ApplicationController
   def update
     respond_to do |format|
       if @recipe.update(recipe_params)
+         ProductsForRecipe.destroy_all(:recipe_id => @recipe.id)
+ 
+        params[:recipe][:products_attributes].each do |key, value|
+          new_product_for_recipe = ProductsForRecipe.new(:quantity => value['products_for_recipe']['quantity'], 
+                                                         :product_id => value['products_for_recipe']['product_id'])
+	      new_product_for_recipe.recipe_id = @recipe.id
+          new_product_for_recipe.save
+        end
+
         format.html { redirect_to @recipe, notice: 'Recipe was successfully updated.' }
         format.json { head :no_content }
       else
@@ -84,6 +95,6 @@ class RecipesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def recipe_params
-      params.require(:recipe).permit(:name, :instructions, :image_file_name, :image_content_type, :image_file_size, :image_updated_at, :image)
+      params.require(:recipe).permit(:name, :instructions, :image_file_name, :image_content_type, :image_file_size, :image_updated_at, :prep_time, :complexity, :image)
     end
 end

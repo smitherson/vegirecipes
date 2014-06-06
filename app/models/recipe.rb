@@ -6,4 +6,53 @@ class Recipe < ActiveRecord::Base
   accepts_nested_attributes_for :products
   accepts_nested_attributes_for :products_for_recipe
 
+  def total_protein
+    total = 0
+    self.products_for_recipe.each do |product|
+      total=total+product.quantity*product.product.protein/100
+    end
+    total
+  end
+  def total_fat
+    total = 0
+    self.products_for_recipe.each do |product|
+      total=total+product.quantity*product.product.fat/100
+    end
+    total
+  end
+  def total_calories
+    total = 0
+    self.products_for_recipe.each do |product|
+      total=total+product.quantity*product.product.calories/100
+    end
+    total
+  end
+  def total_carbs
+    total = 0
+    self.products_for_recipe.each do |product|
+      total=total+product.quantity*product.product.carbs/100
+    end
+    total
+  end
+  def prep_time_text
+    return self.prep_time.to_s(:time) if self.prep_time
+    "n/a min"
+  end
+  def complexity_text
+    return "easy" if self.complexity == 1
+    return "medium" if self.complexity == 2 
+    return "hard" if self.complexity == 3
+    "n/a"
+  end
+
+  def self.search(term)
+   if term
+     where_statement = term.split(" ").map{ |word| 
+	"(products.name like '%#{word}%' or recipes.name like '%#{word}%' or recipes.instructions like '%#{word}%' )" }.join(' and ')
+
+     Recipe.joins(products_for_recipe: :product).where(where_statement).distinct(:recipe_id)
+   else
+     find(:all)
+   end 
+  end
 end

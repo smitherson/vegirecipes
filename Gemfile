@@ -5,7 +5,9 @@ gem 'rails', '4.0.4'
 
 # Use mariadb as the database for Active Record
 gem 'mysql2'
-
+gem 'therubyracer'
+gem "twitter-bootstrap-rails"
+gem "less-rails"
 # Use paperclip for uploading images
 gem "paperclip", "~> 4.1"
 

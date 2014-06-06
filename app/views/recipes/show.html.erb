@@ -1,36 +1,26 @@
-<p id="notice"><%= notice %></p>
+  <div id="notice"><%= notice %></div>
 
+  <div class="row">
+    <div class="span2">
+      <%= @recipe.name %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset1 span16">
+      <%= image_tag(@recipe.image.url(:medium)) %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset1 span8 ">
+      <strong>Instructions:</strong>
+      <%= @recipe.instructions %>
+    </div>
 
-
-<p>
-  <strong>Name:</strong>
-  <%= @recipe.name %>
-</p>
-
-<p>
-  <strong>Instructions:</strong>
-  <%= @recipe.instructions %>
-</p>
-
-<p>
-  <strong>Image file name:</strong>
-  <%= @recipe.image_file_name %>
-</p>
-
-<p>
-  <strong>Image content type:</strong>
-  <%= @recipe.image_content_type %>
-</p>
-
-<p>
-  <strong>Image file size:</strong>
-  <%= @recipe.image_file_size %>
-</p>
-
-<p>
-  <strong>Image updated at:</strong>
-  <%= @recipe.image_updated_at %>
-</p>
-
+    <div class="span8 product_list">
+      <% @recipe.products_for_recipe.each do |rp| %>
+        <%= link_to "#{rp.product.name}", rp.product %> <%= "#{rp.quantity}  grams" %> <br>
+      <% end %>
+    </div>
+  </div>
 <%= link_to 'Edit', edit_recipe_path(@recipe) %> |
 <%= link_to 'Back', recipes_path %>

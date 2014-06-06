@@ -1,4 +1,3 @@
-time = 4h
 done	scaffold a product 
 done 	scaffold a recipe 
 done	make db connection  
@@ -11,13 +10,23 @@ done		make dynamic adding and removing of fields in form with autocomplete
 done		make database fixes for the quantity field, add name field to recipe 
 done		make reader for the form  
 		make validations for the form
-	
+        refractor the partial for adding products	
 done	add some test recipes and products
-	make good view, edit and index for recipes
-	make good interface for adding products
-	make good interface for adding recipes
-	make good link for adding products while adding recipe
-	add capcha for recipe adding
-	make good session saving, so refresh does not delete info on page
+done	make good view, edit and index for recipes
+done	fix desing ugliness
+done	fix fields and make info fuller for recipes thumbs
+done	add links to product view
+done	make single word search on front page
+done	make multiple word search on front page
+        deploy on server
+        make validations
+		make a random get link
+        make a search by products you have
+		add tags for recipes
+		make good interface for adding products
+		make good interface for adding recipes
+		make good link for adding products while adding recipe
+		add capcha for recipe adding
+		make good session saving, so refresh does not delete info on page
 
 
