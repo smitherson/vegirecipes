@@ -6,7 +6,6 @@ class RecipesController < ApplicationController
   # GET /recipes.json
   def index
 	@recipes = Recipe.search(params[:search])
-#    @recipes = Recipe.all
   end
 
   # GET /recipes/1
@@ -33,17 +32,22 @@ class RecipesController < ApplicationController
   # POST /recipes.json
   def create
     @recipe = Recipe.new(recipe_params)
+    @products = Product.all
 
+    @products_for_recipe = {}
+    new_products_for_recipe = []
+    if (params[:recipe][:products_attributes]) 
+      params[:recipe][:products_attributes].each do |key, value|
+          new_products_for_recipe << ProductsForRecipe.new(:quantity => value['products_for_recipe']['quantity'], 
+                                                         :product_id => value['products_for_recipe']['product_id'])
+      end
+    end
+    @recipe.products_for_recipe = new_products_for_recipe
     respond_to do |format|
       if @recipe.save
-
-		@products_for_recipe = {}
-    
-        params[:recipe][:products_attributes].each do |key, value|
-          new_product_for_recipe = ProductsForRecipe.new(:quantity => value['products_for_recipe']['quantity'], 
-                                                         :product_id => value['products_for_recipe']['product_id'])
-	      new_product_for_recipe.recipe_id = @recipe.id
-          new_product_for_recipe.save
+        new_products_for_recipe.each  do |pfr|
+          pfr.recipe_id = @recipe.id
+          pfr.save
         end
         format.html { redirect_to @recipe, notice: 'Recipe was successfully created.' }
         format.json { render action: 'show', status: :created, location: @recipe }

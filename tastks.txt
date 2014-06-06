@@ -1,6 +1,6 @@
 done	scaffold a product 
 done 	scaffold a recipe 
-done	make db connection  
+done	make db connection
 done	add source safety 
 done	make image upload for recipes and products 
 done	make recipe form have products
@@ -8,9 +8,9 @@ done		make form with rails helpers
 done		make autocomplete for list 
 done		make dynamic adding and removing of fields in form with autocomplete 
 done		make database fixes for the quantity field, add name field to recipe 
-done		make reader for the form  
+done		make reader for the form
 		make validations for the form
-        refractor the partial for adding products	
+		refractor the partial for adding products	
 done	add some test recipes and products
 done	make good view, edit and index for recipes
 done	fix desing ugliness
@@ -18,10 +18,12 @@ done	fix fields and make info fuller for recipes thumbs
 done	add links to product view
 done	make single word search on front page
 done	make multiple word search on front page
-        deploy on server
-        make validations
+		make validations
+		make tests
+		deploy on server
+		make db indexes
 		make a random get link
-        make a search by products you have
+		make a search by products you have
 		add tags for recipes
 		make good interface for adding products
 		make good interface for adding recipes

@@ -1,4 +1,15 @@
 class Recipe < ActiveRecord::Base
+
+#    t.text     "instructions",       null: false
+  validates :instructions, presence: true
+#    t.string   "name"
+  validates :name, presence: true
+#    t.time     "prep_time"
+  validates :prep_time, presence: true
+#    t.integer  "complexity"
+  validates :complexity, presence: true
+  validates :products_for_recipe, presence: true
+
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
   has_many :products_for_recipe
