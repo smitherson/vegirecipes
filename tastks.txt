@@ -18,7 +18,8 @@ done	fix fields and make info fuller for recipes thumbs
 done	add links to product view
 done	make single word search on front page
 done	make multiple word search on front page
-		make validations
+done	fix product list bug
+done	make validations
 		make tests
 		deploy on server
 		make db indexes

@@ -1,5 +1,5 @@
 <div id="product_list" class="span24">
-  <input onclick="addProductRow(' ',' ',' ');" type="button" value="Add product" />
+  <input onclick="addProductRow('','','');" type="button" value="Add product" />
 </div>
 
 <script>
@@ -11,14 +11,11 @@ var availableTags = [
 var products_id_map = {
 <%=raw @products.map { |product| "\"#{product.name}\": \"#{product.id}\"" }.join(', ') %>
 };
-function filter_function (request, response) {
-   response( $.ui.autocomplete.filter( availableTags, request.term ) ); 
-}
 
 function autocomplete_init () {
 
 $( ".auto" ).autocomplete(
-{source: filter_function},
+{source: availableTags},
 "option", { messages: false });
 }
 
@@ -28,7 +25,7 @@ jQuery("#recipe_products_attributes_"+ product_num +"_products_for_recipe_produc
 }
 
 var product_num = 0;
-function addProductRow(product_name, quantity ,product_id) {
+function addProductRow(product_name, quantity, product_id) {
 product_num ++;
 
 var row = '<div id="product_'+product_num+'"> ' + 
