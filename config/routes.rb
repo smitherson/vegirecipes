@@ -3,6 +3,8 @@ VegirecipesZero::Application.routes.draw do
   get "products/create"
   get "recipes/new"
   get "recipes/create"
+  get "recipes/random"
+  get "recipes/with_products"
   resources :recipes
 
   resources :products

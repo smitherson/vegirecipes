@@ -5,17 +5,24 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
 ActiveSupport	test/test_helper.rb	/^class ActiveSupport::TestCase$/;"	c
+AddCarbsToProduct	db/migrate/20140603224154_add_carbs_to_product.rb	/^class AddCarbsToProduct < ActiveRecord::Migration$/;"	c
+AddIndexes	db/migrate/20140612100751_add_indexes.rb	/^class AddIndexes < ActiveRecord::Migration$/;"	c
 AddProperPictures	db/migrate/20140429215727_add_proper_pictures.rb	/^class AddProperPictures < ActiveRecord::Migration$/;"	c
+AddSomeFields	db/migrate/20140525200235_add_some_fields.rb	/^class AddSomeFields < ActiveRecord::Migration$/;"	c
+AddSomeFields2	db/migrate/20140525203344_add_some_fields2.rb	/^class AddSomeFields2 < ActiveRecord::Migration$/;"	c
 Application	config/application.rb	/^  class Application < Rails::Application$/;"	c	class:VegirecipesZero
 ApplicationController	app/controllers/application_controller.rb	/^class ApplicationController < ActionController::Base$/;"	c
 ApplicationHelper	app/helpers/application_helper.rb	/^module ApplicationHelper$/;"	m
 CreateProducts	db/migrate/20140424080938_create_products.rb	/^class CreateProducts < ActiveRecord::Migration$/;"	c
 CreateProductsForRecipe	db/migrate/20140515130707_create_products_for_recipe.rb	/^class CreateProductsForRecipe < ActiveRecord::Migration$/;"	c
+CreateProductsForRecipes	db/migrate/20140520132334_create_products_for_recipes.rb	/^class CreateProductsForRecipes < ActiveRecord::Migration$/;"	c
 CreateRecipes	db/migrate/20140424081331_create_recipes.rb	/^class CreateRecipes < ActiveRecord::Migration$/;"	c
 Product	app/models/product.rb	/^class Product < ActiveRecord::Base$/;"	c
 ProductTest	test/models/product_test.rb	/^class ProductTest < ActiveSupport::TestCase$/;"	c
 ProductsController	app/controllers/products_controller.rb	/^class ProductsController < ApplicationController$/;"	c
 ProductsControllerTest	test/controllers/products_controller_test.rb	/^class ProductsControllerTest < ActionController::TestCase$/;"	c
+ProductsForRecipe	app/models/products_for_recipe.rb	/^class ProductsForRecipe < ActiveRecord::Base$/;"	c
+ProductsForRecipesTest	test/models/products_for_recipes_test.rb	/^class ProductsForRecipesTest < ActiveSupport::TestCase$/;"	c
 ProductsHelper	app/helpers/products_helper.rb	/^module ProductsHelper$/;"	m
 ProductsHelperTest	test/helpers/products_helper_test.rb	/^class ProductsHelperTest < ActionView::TestCase$/;"	c
 Recipe	app/models/recipe.rb	/^class Recipe < ActiveRecord::Base$/;"	c
@@ -25,26 +32,47 @@ RecipesControllerTest	test/controllers/recipes_controller_test.rb	/^class Recipe
 RecipesHelper	app/helpers/recipes_helper.rb	/^module RecipesHelper$/;"	m
 RecipesHelperTest	test/helpers/recipes_helper_test.rb	/^class RecipesHelperTest < ActionView::TestCase$/;"	c
 VegirecipesZero	config/application.rb	/^module VegirecipesZero$/;"	m
+add_fields	app/assets/javascripts/application.js	/^ function add_fields(link, association, content) {$/;"	f
 change	db/migrate/20140424080938_create_products.rb	/^  def change$/;"	f	class:CreateProducts
 change	db/migrate/20140424081331_create_recipes.rb	/^  def change$/;"	f	class:CreateRecipes
 change	db/migrate/20140515130707_create_products_for_recipe.rb	/^  def change$/;"	f	class:CreateProductsForRecipe
+change	db/migrate/20140520132334_create_products_for_recipes.rb	/^  def change$/;"	f	class:CreateProductsForRecipes
+complexity_text	app/models/recipe.rb	/^  def complexity_text$/;"	f	class:Recipe
 create	app/controllers/products_controller.rb	/^  def create$/;"	f	class:ProductsController
 create	app/controllers/recipes_controller.rb	/^  def create$/;"	f	class:RecipesController
 destroy	app/controllers/products_controller.rb	/^  def destroy$/;"	f	class:ProductsController
 destroy	app/controllers/recipes_controller.rb	/^  def destroy$/;"	f	class:RecipesController
 down	db/migrate/20140429215727_add_proper_pictures.rb	/^  def down$/;"	f	class:AddProperPictures
+down	db/migrate/20140525200235_add_some_fields.rb	/^  def down$/;"	f	class:AddSomeFields
+down	db/migrate/20140525203344_add_some_fields2.rb	/^  def down$/;"	f	class:AddSomeFields2
+down	db/migrate/20140603224154_add_carbs_to_product.rb	/^  def down$/;"	f	class:AddCarbsToProduct
+down	db/migrate/20140612100751_add_indexes.rb	/^  def down$/;"	f	class:AddIndexes
 edit	app/controllers/products_controller.rb	/^  def edit$/;"	f	class:ProductsController
 edit	app/controllers/recipes_controller.rb	/^  def edit$/;"	f	class:RecipesController
 index	app/controllers/products_controller.rb	/^  def index$/;"	f	class:ProductsController
 index	app/controllers/recipes_controller.rb	/^  def index$/;"	f	class:RecipesController
 new	app/controllers/products_controller.rb	/^  def new$/;"	f	class:ProductsController
 new	app/controllers/recipes_controller.rb	/^  def new$/;"	f	class:RecipesController
+prep_time_text	app/models/recipe.rb	/^  def prep_time_text$/;"	f	class:Recipe
 product_params	app/controllers/products_controller.rb	/^    def product_params$/;"	f	class:ProductsController
+random	app/controllers/recipes_controller.rb	/^  def random$/;"	f	class:RecipesController
 recipe_params	app/controllers/recipes_controller.rb	/^    def recipe_params$/;"	f	class:RecipesController
+remove_fields	app/assets/javascripts/application.js	/^function remove_fields(link) {$/;"	f
+search	app/models/recipe.rb	/^  def self.search(term)$/;"	F	class:Recipe
+search_by_products	app/models/recipe.rb	/^  def self.search_by_products(product_list)$/;"	F	class:Recipe
 set_product	app/controllers/products_controller.rb	/^    def set_product$/;"	f	class:ProductsController
 set_recipe	app/controllers/recipes_controller.rb	/^    def set_recipe$/;"	f	class:RecipesController
 show	app/controllers/products_controller.rb	/^  def show$/;"	f	class:ProductsController
 show	app/controllers/recipes_controller.rb	/^  def show$/;"	f	class:RecipesController
+total_calories	app/models/recipe.rb	/^  def total_calories$/;"	f	class:Recipe
+total_carbs	app/models/recipe.rb	/^  def total_carbs$/;"	f	class:Recipe
+total_fat	app/models/recipe.rb	/^  def total_fat$/;"	f	class:Recipe
+total_protein	app/models/recipe.rb	/^  def total_protein$/;"	f	class:Recipe
 up	db/migrate/20140429215727_add_proper_pictures.rb	/^  def up$/;"	f	class:AddProperPictures
+up	db/migrate/20140525200235_add_some_fields.rb	/^   def up$/;"	f	class:AddSomeFields
+up	db/migrate/20140525203344_add_some_fields2.rb	/^   def up$/;"	f	class:AddSomeFields2
+up	db/migrate/20140603224154_add_carbs_to_product.rb	/^  def up$/;"	f	class:AddCarbsToProduct
+up	db/migrate/20140612100751_add_indexes.rb	/^  def up$/;"	f	class:AddIndexes
 update	app/controllers/products_controller.rb	/^  def update$/;"	f	class:ProductsController
 update	app/controllers/recipes_controller.rb	/^  def update$/;"	f	class:RecipesController
+with_products	app/controllers/recipes_controller.rb	/^  def with_products$/;"	f	class:RecipesController

@@ -1,15 +1,42 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
 
+  # GET /recipes/with_products
+  # GET /recipes/with_products.json
+  def with_products
+   	@products = Product.select(:name, :id).all
+    
+    products_list = []
+    if (params[:recipe])
+      if (params[:recipe][:products_attributes]) 
+        params[:recipe][:products_attributes].each do |key, value|
+             products_list  << value['products_for_recipe']['product_id']
+        end
+      end
+    end
+    @recipes = Recipe.search_by_products(products_list)
+    
+  end
+
+
+  # GET /recipes/random
+  # GET /recipes/ranodm.json
+  def random
+    @recipe = Recipe.find :first, :offset => rand(Recipe.count)
+	respond_to do |format| 
+      format.html { render action: 'show', location: @recipe }
+      format.json { render action: 'show', status: :created, location: @recipe }
+    end
+  end
 
   # GET /recipes
   # GET /recipes.json
   def index
-	@recipes = Recipe.search(params[:search])
+	@recipes = Recipe.search(params[:search]) 
   end
 
   # GET /recipes/1
-  # GET /recipes/1.json
+  # GET /recipes/1.
   def show
   end
 
@@ -17,14 +44,14 @@ class RecipesController < ApplicationController
   def new
     @recipe = Recipe.new
 	
-	@products = Product.select(:name, :id).where(1==1)
+	@products = Product.select(:name, :id).all
 	@recipe.products = Array.new(1, Product.new)
 	@recipe.products_for_recipe = Array.new(1, ProductsForRecipe.new)
   end
 
   # GET /recipes/1/edit
   def edit
-	@products = Product.select(:name, :id).where(1==1)
+	@products = Product.select(:name, :id).all
 	@products_for_recipe = ProductsForRecipe.where(:recipe_id => @recipe.id)
   end
 

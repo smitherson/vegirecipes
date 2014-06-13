@@ -22,14 +22,16 @@ done	fix product list bug
 done	make validations
 		make tests
 		deploy on server
-		make db indexes
-		make a random get link
-		make a search by products you have
+done	make db indexes
+done	make a random get link
+done	make a search by products you have
 		add tags for recipes
-		make good interface for adding products
-		make good interface for adding recipes
-		make good link for adding products while adding recipe
-		add capcha for recipe adding
+done	make good interface for showing, editing and adding products
+done	make good interface for adding recipes
 		make good session saving, so refresh does not delete info on page
-
+		make good link for adding products while adding recipe
+        fix css
+		add capcha for recipe adding
+after deployment
+		make DB optimizations
 

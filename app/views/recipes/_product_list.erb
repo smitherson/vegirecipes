@@ -5,11 +5,11 @@
 <script>
 
 var availableTags = [
-<%=raw @products.map { |product| "\"#{product.name}\"" }.join(', ') %>
+<%=raw @products.map { |product| "\"#{product.name}\"" }.join(', ') if @products  %>
 ];
 
 var products_id_map = {
-<%=raw @products.map { |product| "\"#{product.name}\": \"#{product.id}\"" }.join(', ') %>
+<%=raw @products.map { |product| "\"#{product.name}\": \"#{product.id}\"" }.join(', ') if @products %>
 };
 
 function autocomplete_init () {

@@ -8,6 +8,22 @@
 </head>
 <body>
 <div class="container">
+<%= link_to "Random", :controller => :recipes, :action => :random  %>
+<%= link_to "Find by products", :controller => :recipes, :action => :with_products  %>
+
+<div class="row">
+  <div class="span10">
+  <%= form_tag  '/recipes/', :method => 'get' do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "Search" %>
+    </p>
+  <% end %>
+  </div>
+</div>
+
+
+
 <%= yield  %>
 </div>
 </body>

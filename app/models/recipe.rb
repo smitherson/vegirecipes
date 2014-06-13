@@ -66,4 +66,16 @@ class Recipe < ActiveRecord::Base
      find(:all)
    end 
   end
+  def self.search_by_products(product_list)
+   if product_list
+     where_statement = product_list.map{ |product_id| 
+	"(products_for_recipes.product_id = #{product_id} )" }.join(' or ')
+
+     Recipe.joins(:products_for_recipe).where(where_statement).distinct(:recipe_id)
+   else
+     find(:all)
+   end 
+  end
+
+
 end

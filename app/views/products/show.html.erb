@@ -1,49 +1,23 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+  <div id="notice"><%= notice %></div>
 
-<p>
-  <strong>Protein:</strong>
-  <%= @product.protein %>
-</p>
+  <div class="row">
+    <div class="span2">
+      <%= @product.name %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="offset1 span8">
+      <%= image_tag(@product.image.url(:medium)) %>
+    </div>
+    <div class="span8 product_list">
+            Protein: <%= @product.protein %> <br> 
+            Calories: <%= @product.calories %> <br>
+            Carbonhidrates: <%= @product.carbs %> 
+            Fat: <%= @product.fat %>       
+    </div>
 
-<p>
-  <strong>Fat:</strong>
-  <%= @product.fat %>
-</p>
-
-<p>
-  <strong>Fiber:</strong>
-  <%= @product.fiber %>
-</p>
-
-<p>
-  <strong>Calories:</strong>
-  <%= @product.calories %>
-</p>
-
-<p>
-  <strong>Image file name:</strong>
-  <%= @product.image_file_name %>
-</p>
-
-<p>
-  <strong>Image content type:</strong>
-  <%= @product.image_content_type %>
-</p>
-
-<p>
-  <strong>Image file size:</strong>
-  <%= @product.image_file_size %>
-</p>
-
-<p>
-  <strong>Image updated at:</strong>
-  <%= @product.image_updated_at %>
-</p>
+  </div>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', :back %>

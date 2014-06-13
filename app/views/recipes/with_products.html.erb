@@ -1,0 +1,10 @@
+
+<%= form_for(:products, :method => 'get') do |f| %>
+
+  <%= render partial: 'product_list' %>
+  <%= f.submit "Search" %>
+<% end %>
+
+
+<%= render partial: 'recipes_show' %>
+

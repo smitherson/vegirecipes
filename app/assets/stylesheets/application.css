@@ -10,4 +10,29 @@
  *
  *= require_self
  *= require_tree .
+ *
  */
+
+.container {
+  background-color: #ffffaa;
+  background-repeat: repeat-y;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.recipe, .product{
+  background-color: #333333;
+}
+
+.recipe_name, .product_name{
+font-size:large;
+float: top;
+}
+.product_description, .recipe_description
+{
+font-size:x-small;
+}
+
+.product_list {
+background-color: #faabaa;
+}
